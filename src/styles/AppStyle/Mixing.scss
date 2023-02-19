@@ -1,0 +1,26 @@
+@mixin Flex($jc) {
+    display: flex;
+    justify-content: $jc;
+    align-items: center !important;
+}
+
+@mixin bc($B,$C) {
+  background: var($B) !important;
+  color:var($C) !important;
+}
+@mixin Shadow {
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
+
+}
+@mixin Hover {
+&:hover{
+  color: var(--primary);
+  background-color:var(--secondary) ;
+}
+}
+// @mixin Mobile {
+//   @media (max-width: 1000px) { @content; }
+// }
+// @mixin SMobile {
+//   @media (max-width: 600px) { @content; }
+// }

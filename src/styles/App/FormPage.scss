@@ -1,0 +1,290 @@
+.ErrorMessage{
+  color: red;
+  font-size: 1vw;
+  position: absolute;
+  transform: translate(-1vh , -2.7vh);
+}
+.App{ 
+  background-image:linear-gradient(220deg , var(--prim) ,var(--sec), var(--sec));
+  height: 100vh; width: 100vw;
+    display: flex;  justify-content: flex-start; align-items: center;justify-content: space-around;
+    padding: 3vw; 
+    .Form{
+      width: calc( var(--width) + 2); background:var(--bgForm) ;
+      height: 90vh;
+      display: flex ; flex-direction: column; align-items: center; 
+      gap: 2vh;
+        padding: 1vw;
+      border-radius: 20px;
+      max-height: 50vw;
+    }
+    h5{
+      color: var(--sec);
+      font-size: 1vw;
+      font-weight: bold;
+    
+    }
+    h1{
+      font-size: 3vw;
+      font-weight: bold;
+  
+    
+    }
+    input,select{
+    border: none; 
+    height: 3vw;
+    border-radius: 4px;
+    direction: rtl;
+    padding: 1vw;
+    font-size: 1vw;
+    font-weight: bold;
+    min-height: 5vh;
+    margin-bottom: min(1.4vh , .2vw);
+    &::placeholder{
+      color: var(--black);
+      opacity: .5;
+    
+    }
+    }
+    .inputs{
+      width: var(--width);
+      display: flex;
+      justify-content: space-between;
+      padding-inline: 1vw;
+    
+    }
+    .tow{
+      input,select{
+        width:  calc( var(--width) / 2.2);
+          display: block !important;
+          height: 3.7vw;
+    
+      }
+     
+      .css-13cymwt-control,.css-t3ipsp-control{
+        max-height: 3.8vw;
+        border-radius: 5px;
+        width:  calc( var(--width) / 2.2);
+        font-weight: bold;
+        font-size: 1vw;
+        display: flex;
+        align-content: space-around;
+        
+    
+      }
+  
+    }
+    .thre{
+      
+      .css-13cymwt-control,.css-t3ipsp-control{
+      width:  calc( var(--width) / 3.5);
+            margin-inline: 3px;
+        height: 3.7vw;
+        border-radius: 5px;
+        font-weight: bold;
+        font-size: .75vw;     
+        display: flex;
+        align-content: space-around; 
+  
+        option{
+          font-size: 1vw; 
+          font-weight: bold;
+      
+        }
+    }
+        input{
+          color: var(--black);
+          height: 3.7vw;
+    
+        }
+       
+    
+      
+      .css-art2ul-ValueContainer2{
+        min-width:  calc( var(--width) / 3.7);
+        font-size: 1.2vw;      
+    
+      }
+      .react-datepicker__input-container{
+     input{
+    
+      width:  calc( var(--width) / 3.3);
+        margin-inline: 5px;
+        height: 3.7vw;
+        font-weight: bold;
+        font-size: 1.2vw;      
+    
+    
+      }
+      }
+     
+     
+    }
+    .one{
+      
+      input{
+        width:  calc( var(--width) - 2vw) ;
+      }
+    }
+    .Contact{
+      display: flex; flex-direction: column; align-items: center ; justify-content: center; gap: .2vw;
+    }
+    .Form_Submit{
+      button{
+       width:  calc( var(--width) - 2vw) ;
+       border: none; 
+       height: 3vw;
+       border-radius: 7px;
+       font-size: 2vw;
+       background-color: var(--sec);
+       color: var(--text);
+    
+       
+      }
+    }
+    .Form_Group{
+      direction: rtl;
+    label{
+      padding-inline: .3vw;
+      font-size: 1.2vw;
+    font-weight: bold;
+    display: block !important;
+    margin: .4vh;
+    
+    }
+    }
+    
+    .react-datepicker__time-container,.react-datepicker__time-container .react-datepicker__time .react-datepicker__time-box {
+    width: 100px !important;
+    }
+    
+    @media only screen and (max-width: 850px)  {
+      --width : 58vw ;
+
+      .Logo{
+       width: 30vh !important;
+      } 
+
+     flex-direction: column-reverse;
+     justify-content: start;
+     gap: 8vw;
+     min-height: 100vh;
+          
+    
+  
+    .Form{
+      height: 70vh;
+      max-height: 70vh;
+    
+    }
+    input{
+      min-height: 5vh;
+      font-size: 1.4vw !important;
+     
+    }
+  
+      .tow{
+       .css-13cymwt-control,.css-t3ipsp-control{ 
+           font-size: 1.4vw !important;    
+           min-height: 5vh;
+          
+          
+             }
+             .css-qbdosj-Input,.css-1fdsijx-ValueContainer{
+                max-height: 3vh !important;
+
+               
+             }
+    }
+    h1{
+      font-size: 5vw !important;
+    }
+    h5{
+      font-size: 1.8vw !important;
+    
+    }
+    label{
+    font-size: 1.5vw !important;
+    margin: .5vh;
+    }
+   
+    .Form_Submit{
+      button{
+     
+       height: 4vh;
+       font-size: 2.6vw;
+     
+       
+      }
+    }
+  
+    .thre {
+    select{
+      font-size: 1.4vw !important;      
+      height: 3vh !important;
+    
+    }
+    option{
+      font-size: 1.2em !important;      
+  
+    }
+     
+    }
+   
+    
+     }
+     @media only screen and (max-width: 599px) {
+         
+    --width : 80vw ;
+      label{
+      font-size: 2.5vw !important;
+     }
+     input,select,.css-13cymwt-control,.css-t3ipsp-control{
+      font-size: 2.5vw !important;
+
+     }
+     }
+   
+
+     @media only screen and (max-width:459px) {
+
+      .Form{
+        gap: 1vh;
+        height: 75vh;
+        
+      }
+         .tow{
+          flex-direction: column;
+          input,.css-13cymwt-control,.css-t3ipsp-control{
+            width: 77vw;
+            min-height: 4vh !important;
+            font-size: 2.5vw !important;
+
+          }
+
+         }
+         input{
+          width: 77vw;
+          min-height: 4vh !important;
+        } 
+          .react-datepicker__input-container{
+            input{
+              min-height: 4vh !important;
+
+        }
+      }
+     .thre{
+      select{
+        font-size: 2.5vw !important;
+
+      } 
+     }
+        
+     .ErrorMessage{
+      font-size: 2vw;
+      position: absolute;
+      transform: translate(-1vh , -1.3vh);
+    }
+  }
+ 
+}

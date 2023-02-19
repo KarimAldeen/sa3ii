@@ -1,0 +1,82 @@
+.IsOrder{
+    background-image:linear-gradient(220deg , var(--prim) ,var(--sec), var(--sec));
+    color: var(--text);
+    flex-direction: column;
+    gap: 7vh;
+    height: 100vh; width: 100vw;
+    display: flex; align-items: center; padding-top: 10vh;
+    .IsOrder_Form{
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+    }
+    .Order_Infos{
+      height: 25vh;
+      padding-top: 5vh;
+      display: flex; justify-content: center; align-items: center; flex-direction: column;
+    }
+    .Order_Info{
+      display: flex; gap: 2vw;
+      margin-top: 3vh; justify-content: center; align-items: center;
+    }
+    #Sa33i{
+        width: 60vw;
+      }
+      h1{
+        font-size: 6vw;
+        h2{
+          display: inline;
+        }
+      }
+      h6{
+        font-size: 2vw;
+        color: var(--bgForm) !important;
+        margin-inline: 1vw;
+
+      }
+      p{
+        display: inline;
+        color: var(--text) !important;
+        font-size: 2vw;
+
+      }
+      @media only screen and (max-width: 599px) {
+         
+        --width : 80vw ;
+          label{
+          font-size: 2.5vw !important;
+         }
+         input,select,.css-13cymwt-control,.css-t3ipsp-control{
+          font-size: 2.5vw !important;
+    
+         }
+         }
+       
+    
+         @media only screen and (max-width:459px) {
+            h1{
+                text-align: center;
+              font-size: 11vw;
+              h2{
+                display: block;
+              }
+            }
+            .Order_Infos{
+              
+              margin: 6vh 0vh !important;
+              align-items: flex-start !important;
+              width: 80vw;
+              p,h6{
+                font-size: 6vw;
+              }
+              .Order_Info{
+              flex-direction: column;
+                align-items: flex-start !important;
+                gap: 0vw !important;
+              }
+            }
+            #Sa33i{
+              width: 80vw;
+            }
+       
+      }
+     
+}

@@ -1,0 +1,35 @@
+.Error{
+    background-image:linear-gradient(220deg , var(--prim) ,var(--sec), var(--sec));
+color: var(--text);
+flex-direction: column-reverse;
+gap: 10vh;
+font-size: 2.4vw ;
+
+#Sa33i{
+    width: 50vw;
+  }
+  p{
+    font-size: 2.4vw ;
+  }
+  
+  @media only screen and (max-width:459px) {
+    font-size: 5vw !important;
+
+       p{
+      font-size: 7vw !important;
+    }
+    .lead{
+      font-size: 5vw !important;
+
+    }
+   
+    #Sa33i{
+      width: 80vw;
+    }
+    h1{
+      font-size: 15vw !important;
+
+    }
+}
+
+}

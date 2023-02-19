@@ -1,0 +1,111 @@
+
+
+.form-home{
+  background-image:linear-gradient(220deg , var(--prim) ,var(--sec), var(--sec));
+    height: 100vh;
+    padding: 30px;
+    display: flex;
+    // justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+   
+    font-size: 1.2vw;
+    font-size:clamp(2vh , 1.2vw ,5vh);
+
+    .logo{
+        width:40vh;
+        margin-bottom: 4vh;
+    }
+.waiting{
+  background-image:linear-gradient(220deg , var(--prim) ,var(--sec), var(--sec));
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+    width: 100vw;
+}
+.form-input{
+    background-color: var(--bgForm);
+    height: 60vh;
+   
+
+    font-family: 'Times New Roman', Times, serif;
+    margin: 7px auto;
+    border-radius: 20px;
+    text-align: center;
+    padding: 40px 0 10px 0;
+    
+    .primary{
+        color: var(--sec);
+    }
+}
+svg{
+    display: inline;
+}
+.formik{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    input{
+        text-decoration: none;
+        border: none;
+        padding: 7px;
+        border-radius: 6px;
+        margin: 0 0 10px 0;
+        width: 80%;
+    }
+    button{
+        color: white;
+        background-color: var(--sec);
+        border-radius: 6px;
+        width: 80%;
+        font-size: 2vw;
+        font-size:clamp(3vh , 2vw ,5vh);
+        outline: none !important;
+        border:none;
+
+    }
+}
+.svg{
+    fill: red !important;
+    
+}
+input{
+ outline: none;
+ padding: 1px;
+}
+p,label{
+    font-size: 2vw ;
+    font-size:clamp(3.4vh , 2vw ,5vh);
+
+
+}
+.my-7{
+   
+    margin: 1vh !important;
+}
+
+@media only screen and (max-width: 599px) {
+font-size: 3vw !important;
+p{
+    font-size: 6vw !important;
+
+}
+label{
+    font-size: 4vw !important;
+
+}
+button{
+  
+    font-size: 4vw !important;
+}
+ .form-input{
+    max-height: 80vw !important;
+    padding: 5vw ;
+ }
+
+}
+}
