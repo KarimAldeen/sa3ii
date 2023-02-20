@@ -38,7 +38,8 @@ function App() {  const navigate = useNavigate();
       console.log("!5");
       if(Orderstatus?.receiver_info_at === null){
         console.log("ما عبا الداتا");
-          
+        navigate(`/?param=${params.get('param')}`)
+
 
       }
       else if(Orderstatus?.receiver_info_at !== null){

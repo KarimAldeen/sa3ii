@@ -31,11 +31,11 @@ if(option.value === "دمشق" ){
     
 }
 
-export const MultiSelect = ({placeholder,name,label,option, setCityId}) => {
+export const MultiSelect = ({placeholder,name,label,option, setCityId,id}) => {
     return (
       <div className='Form_Group'>
               <label className="label">{label}</label>
-              <Field  name={name} placeholder={placeholder} component={Selecter}  options={option} setCityId={setCityId} />
+              <Field  name={name} placeholder={placeholder} id={id} component={Selecter}  options={option} setCityId={setCityId} />
               <ErrorMessage name={name} className='ErrorMessage'  component={"div"} />
   </div>
      )

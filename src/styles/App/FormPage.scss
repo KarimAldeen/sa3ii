@@ -250,7 +250,7 @@
 
       .Form{
         gap: 1vh;
-        height: 75vh;
+        height: 77vh !important;
         
       }
          .tow{
@@ -275,9 +275,22 @@
       }
      .thre{
       select{
-        font-size: 2.5vw !important;
+        font-size: 2vw !important;
 
       } 
+      input{
+        min-height: max(4vh,10vw) !important;
+      }
+      .css-1fdsijx-ValueContainer {
+        font-size: 1.5vw ;
+      
+      } 
+      .css-1xc3v61-indicatorContainer {
+        width:7vw !important;
+        }
+        svg{
+          width: 7vw;
+        }
      }
         
      .ErrorMessage{
