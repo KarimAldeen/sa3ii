@@ -1,10 +1,20 @@
 .Error{
     background-image:linear-gradient(220deg , var(--prim) ,var(--sec), var(--sec));
 color: var(--text);
+display: flex;
+justify-content: center; align-items: center;
 flex-direction: column-reverse;
 gap: 10vh;
 font-size: 2.4vw ;
-
+height: 100vh; 
+h1{
+  font-size: 8vw !important;
+  
+}
+.red{
+  color: red;
+  font-weight: 900;
+}
 #Sa33i{
     width: 50vw;
   }
@@ -31,5 +41,6 @@ font-size: 2.4vw ;
 
     }
 }
+
 
 }

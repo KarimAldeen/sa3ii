@@ -1,17 +1,20 @@
-import {BrowserRouter,Route, Routes} from 'react-router-dom'
-import Customer_Info_Page from './page/Customer_Info_Page';
-import Rate_Page from './page/Rate_Page';
-import Done_Page from './page/Done_Page';
-import Error from './page/Error';
-import IsOrder from './page/IsOrder';
-import React, { useEffect } from 'react'
+import React, { useEffect,lazy } from 'react'
+import {Route, Routes} from 'react-router-dom'
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useGetForm_Info } from './api/ApiHooks/Form_Info';
-import LoadingPage from './page/LoadingPage';
+
+const Customer_Info_Page = lazy(()=> import("./page/Customer_Info_Page"))
+const Rate_Page = lazy(()=> import("./page/Rate_Page"))
+const Done_Page = lazy(()=> import("./page/Done_Page"))
+const Error = lazy(()=> import("./page/Error"))
+const IsOrder = lazy(()=> import("./page/IsOrder"))
+const LoadingPage = lazy(()=> import("./page/IsOrder"))
+
 function App() {  const navigate = useNavigate();
   const [params, setSearchParams] = useSearchParams();
-  const { data: Form_Info_data ,isError, isLoading } = useGetForm_Info(params.get('param'))
+  const { data: Form_Info_data ,isError, isLoading} = useGetForm_Info(params.get('param'))
   const Orderstatus = Form_Info_data?.data?.data?.order_info
+  console.log(Orderstatus);
   useEffect(() => {
  
     if(isError){
@@ -24,21 +27,21 @@ function App() {  const navigate = useNavigate();
         console.log("لم يتم التقييم");
         navigate(`/rate?param=${params.get('param')}`)
       } 
-      if(Orderstatus?.user_rating != null){
+      if(Orderstatus?.user_rating !== null){
         console.log("تم التقييم");
         navigate(`/done?param=${params.get('param')}`)
 
       } 
 
     } 
-    else if(Orderstatus?.parcel_status != 5){
+    else if(Orderstatus?.parcel_status !== 5){
       console.log("!5");
       if(Orderstatus?.receiver_info_at === null){
         console.log("ما عبا الداتا");
           
 
       }
-      else if(Orderstatus?.receiver_info_at != null){
+      else if(Orderstatus?.receiver_info_at !== null){
         console.log(" عبا الداتا");
         navigate(`/isorder?param=${params.get('param')}`)
 

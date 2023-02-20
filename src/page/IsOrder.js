@@ -8,7 +8,6 @@ const IsOrder = ({isError, isLoading}) => {
   const [params, setSearchParams] = useSearchParams();
   const { data: Form_Info_data} = useGetForm_Info(params.get('param'))
   const Order = Form_Info_data?.data?.data?.order_info;
-console.log(Order);
 
 if (isLoading ) { 
   return <LoadingPage/>
@@ -19,7 +18,7 @@ if (isLoading ) {
   return (
     <div className='IsOrder'>
       <div className='IsOrder_Form'>
- <h1>  <h2>جاري توصيل طلبك </h2>{Order?.customer_name}</h1>
+ <h1> <span><h2>جاري توصيل طلبك </h2></span> {Order?.customer_name}</h1>
 <div className='Order_Infos'>
    <div className='Order_Info'>
  <h6><p>المنطقة :</p> {Order?.delivery_region}</h6>

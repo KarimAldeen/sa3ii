@@ -6,7 +6,6 @@ import * as Yup from "yup";
 import { LoadingButton } from '../component/Rate/LoadingButton'
 import { useUpdateRate } from '../api/ApiHooks/Rate'
 import { useGetForm_Info } from '../api/ApiHooks/Form_Info'
-import Done_Page from './Done_Page'
 import LoadingPage from './LoadingPage';
 function Rate_Page() {
       const navigate = useNavigate();
@@ -15,7 +14,7 @@ function Rate_Page() {
     const [Rate , setRate]= React.useState(0)
     const params = new URLSearchParams(loaction.search)
     
-    const {mutate, isLoading} = useUpdateRate(params.get('param'))
+    const {mutate, isLoading , isSuccess} = useUpdateRate(params.get('param'))
    
     const {data,Loading,isFetching,isError} = useGetForm_Info(params.get('param'))
    const handelSubmit = (values)=>{
@@ -33,8 +32,13 @@ function Rate_Page() {
   if(isError){
     navigate("/error")
   }
+  if(isSuccess){
+    navigate("/done?param=MzaxMLY0sjA2AgA=  ")
+  }
+  console.log(data?.data?.data?.order_info?.user_feedback);
 
-    if(!(data?.data?.data?.order_info?.user_feedback)){
+    
+
         return (
             <div className='form-home'>
                 <div className='w-full flex justify-center'>
@@ -70,19 +74,7 @@ function Rate_Page() {
         )
         
     }
-        
-        return(
-             <Done_Page/>
-                      
-                      
-                      )
-  
-
-
-  
-  
-
-}
+    
 
 export default Rate_Page
 

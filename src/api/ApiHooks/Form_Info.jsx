@@ -14,4 +14,4 @@ const API= {
 export const useGetForm_Info = (params)=>useGetQuery(KEY, API.GET+params)
 export const useAddForm_Info = ()=>useAddMutation(API.ADD)
 export const useDeleteForm_Info = ()=>useDeleteMutation(API.ADD)
-export const useUpdateForm_Info = (params)=>useUpdateMutation(KEY, API.PUT+params)
+export const useUpdateForm_Info = (params)=>useUpdateMutation(API.PUT+params)

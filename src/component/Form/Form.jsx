@@ -8,12 +8,16 @@ import { DatePic } from '../../utils/DatePicker'
 import { FormText } from './FormText'
 import { useGetSub_Region } from '../../api/ApiHooks/Region'
 import {  useState } from 'react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 
 const FormData = ({Form_Info_data}) => {
   const [cityId, setCityId] = useState("1")
-   
+  const navigate = useNavigate();
+
   const { data: Sub_Region_data } = useGetSub_Region({Sub_Region_id:cityId},cityId)
-  const {mutate} = useUpdateForm_Info()
+  const [params, setSearchParams] = useSearchParams();
+
+  const {mutate,isSuccess} = useUpdateForm_Info(params.get('param'))
   const user = Form_Info_data?.data?.data;
   const cites = Form_Info_data?.data?.data?.cites?.map((i) => ({ value: i.label_ar, label: i.label_ar }))
   const Sub_Region = Sub_Region_data?.data?.data?.map((i) => ({ value: i.label_ar, label: i.label_ar })).filter(i => { return i.value !== null })
@@ -35,14 +39,15 @@ const FormData = ({Form_Info_data}) => {
      receiver_notes:value?.receiver_notes
 
       }
-           console.log(FormValiue);
 
            mutate(FormValiue)
   }
 
 
 
-
+if(isSuccess){
+  navigate(`/isorder?param=${params.get('param')}`)
+}
   return (
     user&& 
     <Formik initialValues={initialValues(user)} validationSchema={validationSchema} onSubmit={(value) => Submit(value)} >

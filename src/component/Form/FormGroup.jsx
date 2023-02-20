@@ -10,18 +10,4 @@ export const FormGroup = ({placeholder,name,label }) => {
   </div> 
    )
 }
-// export const FormGroupSelector = ({name,label,option,id}) => {
- 
-  
-//   return (
-//     <div className='Form_Group'>
-//     <label className="label ">{label}</label>
-//         <Field as="select" type="text" id={id} name={name}>
-//             {option.map((item, index) => <option key={index}>{item.label}</option>)}
-//         </Field>
-//         <ErrorMessage name={name} className='ErrorMessage'  component={"div"} />
-
-//       </div>
-//    )
-// }
 
