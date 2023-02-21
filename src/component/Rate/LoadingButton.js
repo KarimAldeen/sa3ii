@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 const LoadingButton = ({ isLoading = false, ...props }) => {
   return (
-    <Button disabled={isLoading} {...props}>
+    <Button disabled={isLoading} {...props} >
       {isLoading ? <Spinner style={{ marginRight: "10px" }} size="sm" /> : null}
       <span className="LoadingButton" >{props.children}</span>
     </Button>

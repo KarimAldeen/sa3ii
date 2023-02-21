@@ -1,7 +1,6 @@
 import React from 'react'
 
 function FormSuccessful() {
-    console.log("fuewfouhweoufh")
   return (
     <div className='form-home'>
     <div className='w-full flex justify-center'>

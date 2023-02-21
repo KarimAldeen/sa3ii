@@ -1,8 +1,13 @@
 
 
-body{  font-family:'Tajawal', sans-serif;background-color: var(--bg) }
+body{  font-family:'Tajawal' ;background-color: var(--bg) }
 a{color: inherit; font-weight: bold; }
 html{background-color: var(--bg);}
-*{ margin: 0; padding: 0; box-sizing: border-box; &:focus{outline: var(--sec);}         font-weight: bold;
+*{ margin: 0; padding: 0; box-sizing: border-box; &:focus{outline: var(--sec);}  font-family:'Tajawal';       font-weight: bold;
 }
 
+
+input::placeholder , input{
+    // font-family: 'Tajawal';
+    font-family:'Tajawal' !important
+}

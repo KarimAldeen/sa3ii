@@ -43,7 +43,7 @@
     &::placeholder{
       color: var(--black);
       opacity: .5;
-    
+      // font-family:'Tajawal', sans-serif;
     }
     }
     .inputs{
@@ -251,6 +251,7 @@
       .Form{
         gap: 1vh;
         height: 77vh !important;
+        min-height: 130vw !important;
         
       }
          .tow{

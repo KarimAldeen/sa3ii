@@ -15,6 +15,7 @@ export const initialValues = (object)=>{
       customer_name: "المحترم", customer_cites: "دمشق", delivery_region: "", customer_address: "",
       customer_Build: "", customer_Build_entrance: "", customer_close_mark: "",
       receiver_notes: "", customer_floor: "", time_range_delivery: "", date_delivery: "",
+      region_term:''
     };
   }
   return {
@@ -23,9 +24,11 @@ export const initialValues = (object)=>{
    customer_cites: object?.cites[0].label_ar,
    delivery_region: object?.order_info?.delivery_region,
    customer_address: "",
+
   customer_Build:"",
    customer_Build_entrance: "",
    customer_close_mark: "",
+   region_term:"",
    customer_floor:"",
    time_range_delivery: object?.order_info?.time_range_delivery,
    date_delivery: object?.order_info?.date_delivery,

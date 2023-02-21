@@ -35,7 +35,6 @@ function Rate_Page() {
   if(isSuccess){
     navigate("/done?param=MzaxMLY0sjA2AgA=  ")
   }
-  console.log(data?.data?.data?.order_info?.user_feedback);
 
     
 

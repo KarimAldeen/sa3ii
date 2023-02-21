@@ -14,7 +14,6 @@ function App() {  const navigate = useNavigate();
   const [params, setSearchParams] = useSearchParams();
   const { data: Form_Info_data ,isError, isLoading} = useGetForm_Info(params.get('param'))
   const Orderstatus = Form_Info_data?.data?.data?.order_info
-  console.log(Orderstatus);
   useEffect(() => {
  
     if(isError){
