@@ -41,7 +41,7 @@ function Rate_Page() {
         return (
             <div className='form-home'>
                 <div className='w-full flex justify-center'>
-                    <img src='/logo.png' className='logo' alt='logo'/>
+                    <img src='/Logo.png' className='logo' alt='logo'/>
                 </div>
                 <div className='form-input w-[70vw] md:w-[50vw]'>
                     <p className='text-white  font-semibold '>تم توصيل طلبك بنجاح</p>
