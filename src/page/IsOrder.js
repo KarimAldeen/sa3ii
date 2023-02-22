@@ -22,11 +22,11 @@ if (isLoading ) {
 <div className='Order_Infos'>
    <div className='Order_Info'>
  <h6><p>المنطقة :</p> {Order?.delivery_region}</h6>
- <h6>  <p>العنوان:</p> {Order?.customer_address}  </h6>
+ <h6>  <p>العنوان :</p> {Order?.customer_address}  </h6>
  </div>
  <div className='Order_Info'>
  <h6> <p>التاريخ :</p> {Order?.date_delivery}</h6>
- <h6>  <p>الوقت:</p> {Order?.time_range_delivery}  </h6>
+ <h6>  <p> الوقت :</p> {Order?.time_range_delivery}  </h6>
  </div>
  <div className='Order_Info'>
  <h6> <p> الهاتف :</p> {Order?.customer_phone}</h6>

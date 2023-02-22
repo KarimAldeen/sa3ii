@@ -22,7 +22,7 @@ const FormData = ({ Form_Info_data }) => {
   const { mutate, isSuccess  , isLoading} = useUpdateForm_Info(params.get('param'))
   const user = Form_Info_data?.data?.data;
   const cites = Form_Info_data?.data?.data?.cites?.map((i) => ({ value: i.label_ar, label: i.label_ar }))
-  const Sub_Region = Sub_Region_data?.data?.data?.map((i) => ({ value: i.label_ar + i.tags, label: i.label_ar  })).filter(i => { return i.value !== null })
+  const Sub_Region = Sub_Region_data?.data?.data?.map((i) => ({ value: i.label_ar + i.tags, label: i.label_ar  })).filter(i => { return i.label !== null })
   const Submit = (value) => {
     
     const Region_Data = (Sub_Region_data?.data?.data?.filter(i => i.label_ar === value?.delivery_region));
