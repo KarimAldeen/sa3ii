@@ -258,15 +258,16 @@
           flex-direction: column;
           input,.css-13cymwt-control,.css-t3ipsp-control{
             width: 77vw;
-            min-height: 4vh !important;
-            font-size: 2.5vw !important;
+            min-height: max(4vh,25px) !important;
+             font-size: 2.5vw !important;
 
           }
 
          }
          input{
           width: 77vw;
-          min-height: 4vh !important;
+          min-height: max(4vh,25px) !important;
+
         } 
           .react-datepicker__input-container{
             input{
@@ -280,7 +281,7 @@
 
       } 
       input{
-        min-height: max(4vh,10vw) !important;
+        min-height: max(4vh,35px) !important;
       }
       .css-1fdsijx-ValueContainer {
         font-size: 1.5vw ;

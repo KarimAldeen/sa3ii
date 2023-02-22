@@ -57,6 +57,7 @@ function Rate_Page() {
                         <div className='w-full'> 
                         <Field
                             name="sugg"
+                            as="textarea"
                             
                             />
                          

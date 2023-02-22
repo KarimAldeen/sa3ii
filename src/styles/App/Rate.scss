@@ -49,14 +49,20 @@ svg{
     flex-direction: column;
     align-items: center;
 
-    input{
+    input,textarea {
         text-decoration: none;
         border: none;
         padding: 7px;
         border-radius: 6px;
-        margin: 0 0 10px 0;
+        margin: 8px 0 10px 0;
         width: 80%;
+        resize: vertical !important;
+        min-height: 6vh;
+
+        overflow: none;
+        max-height: 13vh;
     }
+
     button{
         color: white;
         background-color: var(--sec);
@@ -73,7 +79,7 @@ svg{
     fill: red !important;
     
 }
-input{
+input,textarea{
  outline: none;
  padding: 1px;
 }
@@ -103,7 +109,8 @@ button{
     font-size: 4vw !important;
 }
  .form-input{
-    max-height: 80vw !important;
+    max-height: 45vh !important;
+    min-height: 90vw;
     padding: 5vw ;
  }
 
