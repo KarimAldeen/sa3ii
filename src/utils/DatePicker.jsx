@@ -12,7 +12,7 @@ const DatePicer = () => {
       // selected={( new Date( formik.getFieldProps("date_delivery").value)) }
       selected={startDate}
       onChange={(date) => setStartDate(date)}
-      minDate={new Date()}
+      minDate={new Date().setDate(new Date().getDate() + 1 )}
       maxDate={new Date().setDate(new Date().getDate() + 10)}
       filterDate={(date) => date.getDay() !== 5 && date.getDate() !== 0}
     />

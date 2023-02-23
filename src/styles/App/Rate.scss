@@ -1,6 +1,7 @@
 
 
 .form-home{
+   
   background-image:linear-gradient(220deg , var(--prim) ,var(--sec), var(--sec));
     height: 100vh;
     padding: 30px;
@@ -28,7 +29,7 @@
 }
 .form-input{
     background-color: var(--bgForm);
-    height: 60vh;
+    height: 65vh;
    
 
     font-family: 'Times New Roman', Times, serif;
@@ -39,6 +40,14 @@
     
     .primary{
         color: var(--sec);
+    }
+}
+.Rating{
+    direction: ltr;
+    ._4jGoj{
+        display: flex; align-items: center; justify-content: center;
+  
+     
     }
 }
 svg{
@@ -76,16 +85,14 @@ svg{
     }
 }
 .svg{
-    fill: red !important;
-    
+    height: 2.4vw;    
 }
 input,textarea{
  outline: none;
  padding: 1px;
 }
 p,label{
-    font-size: 2vw ;
-    font-size:clamp(3.4vh , 2vw ,5vh);
+    font-size:clamp(3.4vh , 1vw ,5vh);
 
 
 }
@@ -109,10 +116,18 @@ button{
     font-size: 4vw !important;
 }
  .form-input{
-    max-height: 45vh !important;
-    min-height: 90vw;
+    max-height: 50vh !important;
+    min-height: 100vw !important;
     padding: 5vw ;
+    width: 85vw;
+
  }
+ ._4jGoj li{
+    display: flex; align-items: center; justify-content: center;
+    margin:5px !important;
+
+ 
+}
 
 }
 }

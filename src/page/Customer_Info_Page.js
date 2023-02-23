@@ -14,7 +14,7 @@ const Customer_Info_Page = () => {
   return <LoadingPage/>
 }
   if(isError){
-    navigate("/error")
+    navigate("/form/error")
   }
   return (
     <div className='App'>

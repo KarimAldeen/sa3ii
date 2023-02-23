@@ -13,7 +13,7 @@ if (isLoading ) {
   return <LoadingPage/>
 }
   if(isError){
-    navigate("/error")
+    navigate("/form/error")
   }
   return (
     <div className='IsOrder'>

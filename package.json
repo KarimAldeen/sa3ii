@@ -1,7 +1,7 @@
 {
   "name": "Sa3ii",
   "version": "0.1.0",
-  "homepage":"form",
+  "homepage": "form",
   "private": true,
   "dependencies": {
     "axios": "^1.2.1",
@@ -10,7 +10,9 @@
     "react": "^18.2.0",
     "react-datepicker": "^4.10.0",
     "react-dom": "^18.2.0",
+    "react-emoji-rating": "^1.0.6",
     "react-query": "^3.39.2",
+    "react-rating-emoji": "^1.1.1",
     "react-router-dom": "^6.6.1",
     "react-scripts": "5.0.1",
     "react-select": "^5.7.0",

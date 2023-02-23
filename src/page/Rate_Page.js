@@ -1,7 +1,6 @@
 import { Field, Form, Formik } from 'formik'
 import React from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Rating } from 'react-simple-star-rating'
 import * as Yup from "yup";
 import { LoadingButton } from '../component/Rate/LoadingButton'
 import { useUpdateRate } from '../api/ApiHooks/Rate'
@@ -9,6 +8,9 @@ import { useGetForm_Info } from '../api/ApiHooks/Form_Info'
 import LoadingPage from './LoadingPage';
 import Logo from '../images/Logo.png'
 import star from '../images/star.svg'
+import { RatingComponent } from 'react-rating-emoji'
+import 'react-rating-emoji/dist/index.css'
+
 function Rate_Page() {
       const navigate = useNavigate();
 
@@ -26,17 +28,21 @@ function Rate_Page() {
     })
    }
    const handleRating = (rate) => {
+   
+
     setRate(rate)
+  
+
   }
-   if ( Loading || isFetching ) {
-    return <LoadingPage/>
-    }
-  if(isError){
-    navigate("/error")
-  }
-  if(isSuccess){
-    navigate("/done?param=MzaxMLY0sjA2AgA=  ")
-  }
+//    if ( Loading || isFetching ) {
+//     return <LoadingPage/>
+//     }
+//   if(isError){
+//     navigate("/form/error")
+//   }
+//   if(isSuccess){
+//     navigate("/form/done?param=MzaxMLY0sjA2AgA=  ")
+//   }
 
     
 
@@ -50,7 +56,12 @@ function Rate_Page() {
                     <p className='primary font-semibold flex justify-center items-center'>تقييم الطلب <img src={star} alt='star' className='h-5  m-1 svg'  /> </p>
                     <strong>كيف كانت تجربة طلبك في ساعي؟</strong>
                     <strong className='block'>(تقييمك وملاحظاتك تساعدنا في تطوير خدمة ساعي)</strong>
-                    <div className='my-7 text-center w-full  '><Rating  initialValue={1}  size={30} onClick={handleRating}/></div>
+                    <div className='my-7 text-center w-full Rating '>
+              
+                           <RatingComponent
+                            rating={Rate} 
+                            onClick={handleRating} />
+                           </div>
                     <Formik  onSubmit={handelSubmit} validationSchema={getValidationSchema()} initialValues={{sugg:""}}>
                         {
                             (formik)=>(

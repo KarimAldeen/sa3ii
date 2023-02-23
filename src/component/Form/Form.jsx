@@ -6,23 +6,25 @@ import { useUpdateForm_Info } from '../../api/ApiHooks/Form_Info'
 import { FormGroup } from './FormGroup'
 import { DatePic } from '../../utils/DatePicker'
 import { FormText } from './FormText'
-import { useGetSub_Region } from '../../api/ApiHooks/Region'
+import { useGetSub_Region } from '../../api/ApiHooks/SubRegion'
 import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { LoadingButton } from '../Rate/LoadingButton'
+import { useGetRegion } from '../../api/ApiHooks/Region'
 
 const FormData = ({ Form_Info_data }) => {
   const [cityId, setCityId] = useState("1")
   const [term, setterm] = useState("")
   const navigate = useNavigate();
-
   const { data: Sub_Region_data } = useGetSub_Region({ Sub_Region_id: cityId }, cityId)
   const [params, setSearchParams] = useSearchParams();
 
   const { mutate, isSuccess  , isLoading} = useUpdateForm_Info(params.get('param'))
   const user = Form_Info_data?.data?.data;
   const cites = Form_Info_data?.data?.data?.cites?.map((i) => ({ value: i.label_ar, label: i.label_ar }))
-  const Sub_Region = Sub_Region_data?.data?.data?.map((i) => ({ value: i.label_ar + i.tags, label: i.label_ar  })).filter(i => { return i.label !== null })
+  const Sub_Region = Sub_Region_data?.data?.data?.map((i) => ({ value: i.label_ar + i.tags + i.rgn_tags + i.rgn_label_ar , label: i.label_ar  })).filter(i => { return i.label !== null })
+  console.log(Sub_Region_data?.data?.data)
+
   const Submit = (value) => {
     
     const Region_Data = (Sub_Region_data?.data?.data?.filter(i => i.label_ar === value?.delivery_region));
@@ -46,9 +48,8 @@ const FormData = ({ Form_Info_data }) => {
   }
 
 
-
   if (isSuccess) {
-    navigate(`/isorder?param=${params.get('param')}`)
+    navigate(`/form/isorder?param=${params.get('param')}`)
   }
   return (
     user &&
@@ -59,7 +60,7 @@ const FormData = ({ Form_Info_data }) => {
             <FormText formik={formik} />
             <div>
               <div className='inputs tow'>
-                <MultiSelect name="customer_cites" placeholder="أدخل المدينة" label="المدينة" option={cites} setCityId={setCityId} />
+                <MultiSelect name="customer_cites" placeholder="أدخل المدينة" label="المدينة" option={cites} setCityId={setCityId} delivery_region={'delivery_region'}/>
 
                 <Selec name="delivery_region" placeholder="أدخل منطقتك" label="المنطقة" option={Sub_Region} setterm={setterm} />
               </div>
