@@ -10,11 +10,9 @@ import { useGetSub_Region } from '../../api/ApiHooks/SubRegion'
 import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { LoadingButton } from '../Rate/LoadingButton'
-import { useGetRegion } from '../../api/ApiHooks/Region'
 
 const FormData = ({ Form_Info_data }) => {
   const [cityId, setCityId] = useState("1")
-  const [term, setterm] = useState("")
   const navigate = useNavigate();
   const { data: Sub_Region_data } = useGetSub_Region({ Sub_Region_id: cityId }, cityId)
   const [params, setSearchParams] = useSearchParams();
@@ -23,7 +21,6 @@ const FormData = ({ Form_Info_data }) => {
   const user = Form_Info_data?.data?.data;
   const cites = Form_Info_data?.data?.data?.cites?.map((i) => ({ value: i.label_ar, label: i.label_ar }))
   const Sub_Region = Sub_Region_data?.data?.data?.map((i) => ({ value: i.label_ar + i.tags + i.rgn_tags + i.rgn_label_ar , label: i.label_ar  })).filter(i => { return i.label !== null })
-  console.log(Sub_Region_data?.data?.data)
 
   const Submit = (value) => {
     
@@ -62,7 +59,7 @@ const FormData = ({ Form_Info_data }) => {
               <div className='inputs tow'>
                 <MultiSelect name="customer_cites" placeholder="أدخل المدينة" label="المدينة" option={cites} setCityId={setCityId} delivery_region={'delivery_region'}/>
 
-                <Selec name="delivery_region" placeholder="أدخل منطقتك" label="المنطقة" option={Sub_Region} setterm={setterm} />
+                <Selec name="delivery_region" placeholder="أدخل منطقتك" label="المنطقة" option={Sub_Region}  />
               </div>
               <div className='inputs tow'>
                 <FormGroup name="customer_address" label="منزل - مكتب السيد/ة" placeholder=" مثال : بيت الجبة منزل الدكتور محمد" />

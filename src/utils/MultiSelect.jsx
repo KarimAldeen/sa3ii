@@ -1,12 +1,11 @@
 import Select from 'react-select';
 import { ErrorMessage, Field, useFormikContext } from 'formik';
 import {  useState } from 'react';
- const Selecter = ({field,form,options,placeholder,setCityId ,delivery_region}) => {
+ const Selecter = ({field,form,options,placeholder,setCityId }) => {
  const formik = useFormikContext()
 
 
 const onChange = (option) => {
-// console.log(formik.getFieldProps('delivery_region')?.value)
 form.setFieldValue(field.name, option.label)
 if(option.value === "دمشق" ){ 
   formik.setFieldValue('delivery_region', 'f')  
@@ -37,7 +36,7 @@ else if(option.value === "ريف دمشق"){
         
     
 }
-const Sel = ({field,form,options=[],placeholder,setterm}) => {
+const Sel = ({field,form,options=[],placeholder}) => {
   
   const [inputvalue, setInputvalue] = useState("")
   const onChange = (option) => {
@@ -46,14 +45,11 @@ const Sel = ({field,form,options=[],placeholder,setterm}) => {
     form.setFieldValue('region_term', inputvalue)
     }
   form.setFieldValue(field.name, option.label)
-  setterm(inputvalue)
 }    
     const formik = useFormikContext()    
       const handleInputChange = (e)=>{
           setInputvalue(e)
-        //   options.pop()
-        //   const r = "؟؟"
-        //   options.push({ value: e, label: r + e }) 
+      
         }
           return (
               <Select
@@ -83,11 +79,11 @@ export const MultiSelect = ({placeholder,name,label,option, setCityId,id,deliver
   </div>
      )
   }
-  export const Selec = ({placeholder,name,label,option,id,setterm}) => {
+  export const Selec = ({placeholder,name,label,option,id}) => {
     return (
       <div className='Form_Group'>
               <label className="label">{label}</label>
-              <Field  name={name} placeholder={placeholder} id={id} component={Sel}  options={option} setterm={setterm} />
+              <Field  name={name} placeholder={placeholder} id={id} component={Sel}  options={option}  />
               <ErrorMessage name={name} className='ErrorMessage'  component={"div"} />
   </div>
      )

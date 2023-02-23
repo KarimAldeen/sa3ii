@@ -4,8 +4,6 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import * as Yup from "yup";
 import { LoadingButton } from '../component/Rate/LoadingButton'
 import { useUpdateRate } from '../api/ApiHooks/Rate'
-import { useGetForm_Info } from '../api/ApiHooks/Form_Info'
-import LoadingPage from './LoadingPage';
 import Logo from '../images/Logo.png'
 import star from '../images/star.svg'
 import { RatingComponent } from 'react-rating-emoji'
@@ -20,7 +18,6 @@ function Rate_Page() {
     
     const {mutate, isLoading , isSuccess} = useUpdateRate(params.get('param'))
    
-    const {data,Loading,isFetching,isError} = useGetForm_Info(params.get('param'))
    const handelSubmit = (values)=>{
     mutate({
         user_rating:Rate,
@@ -34,15 +31,10 @@ function Rate_Page() {
   
 
   }
-//    if ( Loading || isFetching ) {
-//     return <LoadingPage/>
-//     }
-//   if(isError){
-//     navigate("/form/error")
-//   }
-//   if(isSuccess){
-//     navigate("/form/done?param=MzaxMLY0sjA2AgA=  ")
-//   }
+
+  if(isSuccess){
+    navigate("/form/done?param=MzaxMLY0sjA2AgA=  ")
+  }
 
     
 
