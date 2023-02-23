@@ -7,6 +7,8 @@ import { LoadingButton } from '../component/Rate/LoadingButton'
 import { useUpdateRate } from '../api/ApiHooks/Rate'
 import { useGetForm_Info } from '../api/ApiHooks/Form_Info'
 import LoadingPage from './LoadingPage';
+import Logo from '../images/Logo.png'
+import star from '../images/star.svg'
 function Rate_Page() {
       const navigate = useNavigate();
 
@@ -41,11 +43,11 @@ function Rate_Page() {
         return (
             <div className='form-home'>
                 <div className='w-full flex justify-center'>
-                    <img src='/Logo.png' className='logo' alt='logo'/>
-                </div>
+                    <img src={Logo} className='logo' alt='logo'/>
+                </div> 
                 <div className='form-input w-[70vw] md:w-[50vw]'>
                     <p className='text-white  font-semibold '>تم توصيل طلبك بنجاح</p>
-                    <p className='primary font-semibold flex justify-center items-center'>تقييم الطلب <img src='/star.svg' alt='star' className='h-5  m-1 svg'  /> </p>
+                    <p className='primary font-semibold flex justify-center items-center'>تقييم الطلب <img src={star} alt='star' className='h-5  m-1 svg'  /> </p>
                     <strong>كيف كانت تجربة طلبك في ساعي؟</strong>
                     <strong className='block'>(تقييمك وملاحظاتك تساعدنا في تطوير خدمة ساعي)</strong>
                     <div className='my-7 text-center w-full  '><Rating  initialValue={1}  size={30} onClick={handleRating}/></div>

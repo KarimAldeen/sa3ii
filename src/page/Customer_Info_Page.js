@@ -3,6 +3,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useGetForm_Info } from '../api/ApiHooks/Form_Info';
 import FormData from '../component/Form/Form'
 import LoadingPage from './LoadingPage';
+import Logo from '../images/Logo.png'
 
 const Customer_Info_Page = () => {
   const navigate = useNavigate();
@@ -20,7 +21,7 @@ const Customer_Info_Page = () => {
     <div className='Form'>
       <FormData Form_Info_data={Form_Info_data} />
     </div>
-    <img src='/Logo.png' alt='' style={{width:"45vw"}} className="Logo" />
+    <img src={Logo} alt='' style={{width:"45vw"}} className="Logo" />
     </div>
   )
 }
