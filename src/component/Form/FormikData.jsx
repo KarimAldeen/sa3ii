@@ -19,10 +19,10 @@ export const initialValues = (object)=>{
     };
   }
   return {
-  customer_name:object?.order_info?.customer_name,
-  receiver_notes:object?.order_info?.user_feedback,
-   customer_cites: object?.cites[0].label_ar,
-   delivery_region: object?.order_info?.delivery_region,
+  customer_name:object?.order_info?.customer_name??"",
+  receiver_notes:object?.order_info?.user_feedback??"",
+   customer_cites: object?.cites[0].label_ar??"",
+   delivery_region: object?.order_info?.delivery_region??"",
    customer_address: "",
 
   customer_Build:"",
@@ -30,9 +30,9 @@ export const initialValues = (object)=>{
    customer_close_mark: "",
    region_term:"",
    customer_floor:"",
-   time_range_delivery: object?.order_info?.time_range_delivery,
-   date_delivery: object?.order_info?.date_delivery,
-   customer_phone: object?.order_info?.customer_phone,
+   time_range_delivery: object?.order_info?.time_range_delivery??"",
+   date_delivery: object?.order_info?.date_delivery??new Date().setDate(new Date().getDate() + 1),
+   customer_phone: object?.order_info?.customer_phone??"",
   //  city_id : object?.order_info?.city_id,
   //  region_id: object?.order_info?.region_id,
   //  sub_region_id:object?.order_info?.sub_region_id,

@@ -10,6 +10,7 @@ import { useGetSub_Region } from '../../api/ApiHooks/SubRegion'
 import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { LoadingButton } from '../Rate/LoadingButton'
+import moment from "moment";
 
 const FormData = ({ Form_Info_data }) => {
   const [cityId, setCityId] = useState("1")
@@ -35,7 +36,8 @@ const FormData = ({ Form_Info_data }) => {
       city_id: cites_Data[0]?.id,
       region_id: Region_Data[0]?.region_id,
       sub_region_id: Region_Data[0]?.id,
-   
+      date_delivery:moment(value?.date_delivery).format("MMMM Do YYYY")
+      // moment(new Date()).format("MMMM Do YYYY")
 
     }
     if(FormValiue['region_id']){
