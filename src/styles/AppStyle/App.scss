@@ -1,6 +1,6 @@
 
 
-body{  font-family:'Tajawal' ;background-color: var(--bg) ; min-height: 100vh; width: 100vw; display: block !important;}
+body{  font-family:'Tajawal' ;background-color: var(--bg) ; overflow-x: hidden !important ;max-width: 100vw; display: block !important;}
 a{color: inherit; font-weight: bold; }
 html{background-color: var(--bg); min-height: 100vh; width: 100vw;}
 *{ margin: 0; padding: 0; box-sizing: border-box; &:focus{outline: var(--sec);}  font-family:'Tajawal';       font-weight: bold;

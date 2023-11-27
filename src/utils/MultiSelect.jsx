@@ -1,5 +1,5 @@
 import Select from 'react-select';
-import { ErrorMessage, Field, useFormikContext } from 'formik';
+import { ErrorMessage, Field, useField, useFormikContext } from 'formik';
 import {  useState } from 'react';
  const Selecter = ({field,form,options,placeholder,setCityId }) => {
  const formik = useFormikContext()
@@ -70,12 +70,18 @@ const Sel = ({field,form,options=[],placeholder}) => {
       
   }
 
-export const MultiSelect = ({placeholder,name,label,option, setCityId,id,delivery_region}) => {
+export const MultiSelect = ({placeholder,name,label,option, setCityId,id,delivery_region,...props }) => {
+  const [field, meta] = useField({ name, ...props });
+  const formik = useFormikContext();
+  const isError = meta.touched && meta.error;
     return (
       <div className='Form_Group'>
-              <label className="label">{label}</label>
+              <label className="label">{label}{" "}
+              <ErrorMessage name={field.name}>
+            {(msg) => <span className="field-error text-danger isErrorIcon">{(msg)}  </span>}
+          </ErrorMessage>
+              </label>
               <Field  name={name} placeholder={placeholder} id={id} component={Selecter}  options={option} setCityId={setCityId} delivery_region={delivery_region}/>
-              <ErrorMessage name={name} className='ErrorMessage'  component={"div"} />
   </div>
      )
   }

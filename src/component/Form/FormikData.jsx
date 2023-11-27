@@ -10,6 +10,7 @@ export const validationSchema = Yup.object().shape({
 
 })
 export const initialValues = (object)=>{
+  
   if(!object){  
     return {
       customer_name: "المحترم", customer_cites: "دمشق", delivery_region: "", customer_address: "",
@@ -19,7 +20,7 @@ export const initialValues = (object)=>{
     };
   }
   return {
-  customer_name:object?.order_info?.customer_name??"",
+  customer_name:object?.order_info?.customer_name?? "دمشق",
   receiver_notes:object?.order_info?.user_feedback??"",
    customer_cites: object?.cites[0].label_ar??"",
    delivery_region: object?.order_info?.delivery_region??"",
@@ -29,7 +30,7 @@ export const initialValues = (object)=>{
    customer_Build_entrance: "",
    customer_close_mark: "",
    region_term:"",
-   customer_floor:"",
+   customer_floor:"الطابق الأرضي",
    time_range_delivery: object?.order_info?.time_range_delivery??"",
    date_delivery: object?.order_info?.date_delivery??new Date().setDate(new Date().getDate() + 1),
    customer_phone: object?.order_info?.customer_phone??"",

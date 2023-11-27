@@ -4,6 +4,12 @@
   "homepage": "form",
   "private": true,
   "dependencies": {
+    "@ant-design/icons": "^5.2.6",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.18",
+    "@mui/material": "^5.14.18",
+    "@mui/styled-engine-sc": "^6.0.0-alpha.6",
+    "antd": "^5.11.4",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
     "formik": "^2.2.9",
@@ -21,6 +27,7 @@
     "react-simple-star-rating": "^5.1.7",
     "reactstrap": "^9.1.5",
     "sass": "^1.57.1",
+    "styled-components": "^6.1.1",
     "tailwind": "^4.0.0",
     "yup": "^0.32.11"
   },

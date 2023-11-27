@@ -1,16 +1,23 @@
 import React from 'react'
-import { Form, Formik } from 'formik'
-import { initialValues, validationSchema } from './FormikData'
+import { Field, Form, Formik } from 'formik'
+import { initialValues, validationSchema,floorOption, Delivery_time } from './FormikData'
 import { useUpdateForm_Info } from '../../api/ApiHooks/Form_Info'
 import { FormText } from './FormText'
 import { useGetSub_Region } from '../../api/ApiHooks/SubRegion'
 import { useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import moment from "moment";
-import KarimField from '../Karimalden/KarimField'
-import { FakeSelectData } from '../Karimalden/Const'
-import { Col, Row } from 'reactstrap';
+  import MuiSearch1 from '../Forms/MuiSearch1'
+import MuiSelect1 from '../Forms/MuiSelect1'
+import TextField from '@mui/material/TextField';
+import MuiInput from '../Forms/MuiInput'
+import MuiSelect2 from '../Forms/MuiSelect2'
+import MuiSelect3 from '../Forms/MuiSelect3'
+import { LoadingButton } from '../Rate/LoadingButton'
+import MuiSelect from '../Forms/MuiSelect'
 
+
+  
 
 const NewForm = ({ Form_Info_data }) => {
   const [cityId, setCityId] = useState("1")
@@ -22,7 +29,6 @@ const NewForm = ({ Form_Info_data }) => {
   const user = Form_Info_data?.data?.data;
   const cites = Form_Info_data?.data?.data?.cites?.map((i) => ({ value: i.label_ar, label: i.label_ar }))
   const Sub_Region = Sub_Region_data?.data?.data?.map((i) => ({ value: i.label_ar + i.tags + i.rgn_tags + i.rgn_label_ar , label: i.label_ar  })).filter(i => { return i.label !== null })
-
   const Submit = (value) => {
     const Region_Data = Sub_Region_data?.data?.data?.filter(i => i.label_ar === value?.delivery_region);
     const cites_Data = Form_Info_data?.data?.data?.cites?.filter(i => i.label_ar === value?.customer_cites);
@@ -44,12 +50,14 @@ const NewForm = ({ Form_Info_data }) => {
     }
   
     mutate(FormValue);
+    console.log(FormValue);
   };
 
 
   if (isSuccess) {
     navigate(`/form/isorder?param=${params.get('param')}`)
   }
+  
   return (
     // user &&
     <Formik initialValues={initialValues(user)} validationSchema={validationSchema} onSubmit={(value) => Submit(value)} >
@@ -57,19 +65,41 @@ const NewForm = ({ Form_Info_data }) => {
         (formik) => (
           <Form className='NewForm'>
             <FormText formik={formik} />
+    
+        <div className="TowInput">
+        <MuiSelect  name="customer_cites"  label="المدينة" option={cites} setCityId={setCityId}    />
+        <MuiSearch1 option={Sub_Region} cityId={cityId}  />
+ 
 
-            <Row xs={1} sm={1} md={1} lg={2} xl={2}>
-    <Col>
-    <KarimField name="delivery_region" type="select"label='المنطقة'  option={FakeSelectData} isMulti={true} placeholder='أدخل منطقتك'  />
-    <KarimField name="name" type="text"label='name'  placeholder='placeholder' />
+        </div>
+        <div className="TowInput">
+        <MuiInput  name="customer_address" helperText="مثال : بيت الجبة منزل الدكتور محمد"   label="منزل - مكتب السيد/ة" />
+        <MuiInput name="customer_Build" label="اسم / رقم البناء"   helperText="مثال : بناء رقم 15 بناء المهندسين"  />
+        </div>
+        <div className="TowInput">
+        
+        <MuiInput name="customer_Build_entrance" label="المدخل" helperText=" مثال : المدخل اليمين" />
+                <MuiInput name="customer_close_mark" label=" علامة قريبة " helperText="مثال : مقابل جامع النعمان" />
+        </div>
+        <div className='threeInput'>
+        <MuiSelect1 name="customer_floor" label="الطابق" option={floorOption}      />
+        <MuiSelect2  name="time_range_delivery" label="التسليم" option={Delivery_time} />
+        <MuiSelect3 option={cites} setCityId={setCityId}    />
 
+        </div>
 
-    </Col>
+        <div className='OneInput'>
+        <MuiInput name="receiver_notes" label="ملاحظة"/>
+
+        </div>
+
+            
    
-  </Row>
-
-            {/* <h5>للاستفسار التواصل مع خدمة الزبائن على الرقم 0962264575</h5> */}
-          </Form>
+        <div className='Form_Submit'>
+            <LoadingButton isLoading={isLoading} type='submit' className='flex items-center justify-center' >تأكيد</LoadingButton>
+              </div>
+            <h5>للاستفسار التواصل مع خدمة الزبائن على الرقم 0962264575</h5>
+                      </Form>
         )
       }
     </Formik>
